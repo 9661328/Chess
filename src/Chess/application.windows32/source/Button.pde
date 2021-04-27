@@ -1,12 +1,11 @@
 class Button {
-  PFont font;
-  boolean hover;
+  PFont startButtons;
   String word;
-  int x, y, w, h, stroke, strokeWeight, fill, fill2;
+  int x, y, w, h, stroke, strokeWeight, fill;
+  boolean hover, mouseClicked;
 
-  Button(String word, int x, int y, int w, int h, int stroke, int strokeWeight, int fill, int fill2) {
-    font = loadFont("Rockwell-Bold-15.vlw");
-    hover = false;
+  Button(String word, int x, int y, int w, int h, int stroke, int strokeWeight, int fill) {
+    startButtons = loadFont("Rockwell-Bold-15.vlw");
     this.word = word;
     this.x = x;
     this.y = y;
@@ -15,7 +14,6 @@ class Button {
     this.stroke = stroke;
     this.strokeWeight = strokeWeight;
     this.fill = fill;
-    this.fill2 = fill2;
   }
 
   void display() {
@@ -26,11 +24,13 @@ class Button {
     if (!hover) {
       fill(fill);
     } else {
-      fill(fill2);
+      fill(200);
     }
+
     rect(x, y, w, h, 10);
+
     fill(0);
-    textFont(font);
+    textFont(startButtons);
     text(word, x, y);
   }
 

@@ -3,26 +3,28 @@
 import processing.sound.*;
 SoundFile click;
 PImage chessIcon, backArrow;
-Button[] buttons = new Button[5];
 
-int screen = 0;
+Button[] buttons = new Button[5];
+Checkerboard board = new Checkerboard(#F02727);
+int screen = -1;
 boolean run = false;
 
 void setup() {
   size(500, 500);
   chessIcon = loadImage("chessIcon.png");
   backArrow = loadImage("backArrow.png");
-  buttons[0] = new Button("", 20, 20, 30, 30, #F0A2A2, 2, #F0A2A2, 255);
-  buttons[1] = new Button("Start (S)", width/2, 270, 400, 60, 150, 2, #CDEB8B, 200);
-  buttons[2] = new Button("Quit (Q)", width/2, 330, 400, 60, 150, 2, #FFCC99, 200);
-  buttons[3] = new Button("Settings (E)", width/2, 390, 400, 60, 150, 2, #FFCCCC, 200);
-  buttons[4] = new Button("Credits (C)", width/2, 450, 400, 60, 150, 2, #CCE5FF, 200);
+  buttons[0] = new Button("", 20, 20, 30, 30, #F0A2A2, 2, #F0A2A2);
+  buttons[1] = new Button("Start (S)", width/2, 270, 400, 60, 150, 2, #CDEB8B);
+  buttons[2] = new Button("Quit (Q)", width/2, 330, 400, 60, 150, 2, #FFCC99);
+  buttons[3] = new Button("Settings (E)", width/2, 390, 400, 60, 150, 2, #FFCCCC);
+  buttons[4] = new Button("Credits (C)", width/2, 450, 400, 60, 150, 2, #CCE5FF);
 
   click = new SoundFile(this, "Windows XP Error.mp3");
 }
 
 void draw() {
   switch(screen) {
+  case -1:
   case 0:
     startScreen();
     break;
@@ -54,6 +56,7 @@ void mouseClicked() {
     screen = 4;
   }
 }
+
 
 void keyPressed() {
   if (key == 'S' || key == 's') {
@@ -88,9 +91,9 @@ void playScreen() {
   background(255);
 }
 
-//void endScreen() {
-//  background(255);
-//}
+void endScreen() {
+  background(255);
+}
 
 void settingScreen() {
   background(255);
@@ -100,7 +103,7 @@ void settingScreen() {
 }
 
 void creditScreen() {
-  background(255);
+  background(0);
 
   buttons[0].display();
   buttons[0].hover();
