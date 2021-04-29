@@ -14,7 +14,7 @@ Start date: 4/26/2021
 
 [GUI mockup](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) not done, turn each screen into image when done
 
-![Start screen mockup](https://github.com/9661328/chess/blob/main/assets/startScreenMockup.png?raw=true)
+![Start screen mockup](https://github.com/9661328/Chess/blob/main/assets/startScreenMockup.png?raw=true)
 ![Play screen mockup]()
 ![Setting screen mockup]()
 ![Credit screen mockup]()
