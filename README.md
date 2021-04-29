@@ -2,7 +2,7 @@
 
 Description: An individual chess game project for the Computer Programming 1 final project. More...
 
-Written in [Processing](https://processing.org/), a language based on Java.
+Written in [Processing](https://processing.org/), a programming language based on Java.
 
 ## Members: Jonathan Su
 + Jonathan Su: Create GUI mockup of the various screens, create the class diagram, 
