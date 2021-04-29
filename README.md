@@ -2,6 +2,8 @@
 
 Description: An individual chess game project for the Computer Programming 1 final project. More...
 
+Written in [Processing](https://processing.org/)
+
 ## Members: Jonathan Su
 + Jonathan Su: Create GUI mockup of the various screens, create the class diagram, 
 
