@@ -12,7 +12,7 @@ Start date: 4/26/2021
 
 [Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing)
 
-[GUI mockup](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) (not done yet)
+[GUI mockup](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) not done, turn into image when done
 
 [Source code](https://github.com/9661328/chess/tree/main/src) for this project. 
 
