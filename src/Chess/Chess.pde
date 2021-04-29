@@ -1,21 +1,28 @@
 // Jonathan Su, 4/26/2021
 
 import processing.sound.*;
-SoundFile click;
-Button[] buttons = new Button[5];
 
-PImage chessIcon, backArrow;
-PFont settings;
-int screen = 0;
-boolean run = false;
+PImage chessIcon, backArrow, githubLogo;
+PFont finePrint;
+int screen;
+boolean run;
+
+Button[] buttons = new Button[5];
+Button[] otherButtons = new Button[1];
+SoundFile click;
 
 void setup() {
   size(500, 500);
 
   chessIcon = loadImage("chessIcon.png");
   backArrow = loadImage("backArrow.png");
+  githubLogo = loadImage("githubLogo.png");
 
-  settings = loadFont("BritannicBold-30.vlw");
+  finePrint = loadFont("Calibri-12.vlw");
+  
+  screen = 0;
+  
+  run = false;
 
   // Button(String word, int xpos, int ypos, int widt, int heigh, int roundCorner, int stroke, int strokeWeight, int fillNotHover, int fillHover, int textFill)
   buttons[0] = new Button("", 20, 20, 30, 30, 10, #F0A2A2, 2, #F0A2A2, 255, 0);
@@ -23,6 +30,7 @@ void setup() {
   buttons[2] = new Button("Quit (Q)", width/2, 330, 400, 60, 10, 150, 2, #FFCC99, 200, 0);
   buttons[3] = new Button("Settings (E)", width/2, 390, 400, 60, 10, 150, 2, #FFCCCC, 200, 0);
   buttons[4] = new Button("Credits (C)", width/2, 450, 400, 60, 10, 150, 2, #CCE5FF, 200, 0);
+  otherButtons[0] = new Button("GitHub Repository:\nhttps://github.com/9661328/chess", width/2, 345, 400, 60, 10, 150, 2, #D5E8D4, 200, #3399FF);
 
   click = new SoundFile(this, "Windows XP Error.mp3");
 }
@@ -41,6 +49,9 @@ void draw() {
   case 4:
     creditScreen();
     break;
+  case 5:
+
+    break;
   }
 }
 
@@ -58,7 +69,13 @@ void mouseClicked() {
   } else if (buttons[4].hover) {
     click.play();
     screen = 4;
-  }
+  } 
+
+  //else if (otherButtons[0].hover) {
+  //  click.play();
+  //  print("true");
+  //  link("https://github.com/9661328/chess");
+  //}
 }
 
 void keyPressed() {
@@ -107,7 +124,6 @@ void settingScreen() {
   buttons[0].hover();
   image(backArrow, 20, 20, 30, 30);
 
-  textFont(settings);
   textAlign(CENTER, CENTER);
   text("Settings", width/2, 25);
 }
@@ -117,7 +133,20 @@ void creditScreen() {
   buttons[0].display();
   buttons[0].hover();
   image(backArrow, 20, 20, 30, 30);
+  otherButtons[0].display();
+  otherButtons[0].hover();
+  image(githubLogo, 420, 345, 50, 50);
 
-  text("Created by Jonathan Su", width/2, 200);
-  text("Written in Processing for Computer Programming 1", width/2, 230);
+  fill(0);
+  text("Credits", width/2, 25);
+  text("Developer: Jonathan Su", width/2, 80);
+  text("Written in Processing for Computer Programming 1", width/2, 120);
+
+  textFont(finePrint);
+  text("All rights reserved. No part of this publication may be reproduced,", width/2, 405);
+  text("distributed, or transmitted in any form or by any means, including", width/2, 420);
+  text("photocopying, recording, or other electronic or mechanical methods,", width/2, 435);
+  text("without the prior written permission of the publisher, except in the case of", width/2, 450);
+  text("brief quotations embodied in critical reviews and certain other", width/2, 465);
+  text("noncommercial uses permitted by copyright law.", width/2, 480);
 }
