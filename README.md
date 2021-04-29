@@ -4,6 +4,8 @@ Description: An individual chess game project for the Computer Programming 1 fin
 
 Written in [Processing](https://processing.org/), a programming language based on Java.
 
+Start date: 4/26/2021
+
 ## Members: Jonathan Su
 + Jonathan Su: Create GUI mockup of the various screens, create the class diagram, 
 
