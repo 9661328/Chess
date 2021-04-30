@@ -14,6 +14,7 @@ class Checkerboard {
   }
 
   void display() {
+    println(squareSize);
     for (int a = rows; a > 0; a--) {
       ypos = (height - 5) - (squareSize * a);
       for (int b = columns; b > 0; b--) {
@@ -27,8 +28,11 @@ class Checkerboard {
         }
         rectMode(CORNER);
         stroke(oddSquare);
+        strokeWeight(2);
         rect(xpos, ypos, squareSize, squareSize);
         fill(0);
+        
+        textSize(12);
         text(a, 30, ypos + (squareSize/2));
         text(b, xpos + (squareSize/2), 30);
       }

@@ -2,7 +2,7 @@
 
 import processing.sound.*;
 
-PImage chessIcon, backArrow, githubLogo;
+PImage chessIcon, backArrow, githubLogo, processingLogo;
 PFont finePrint;
 int screen;
 boolean run;
@@ -18,11 +18,12 @@ void setup() {
   chessIcon = loadImage("chessIcon.png");
   backArrow = loadImage("backArrow.png");
   githubLogo = loadImage("githubLogo.png");
+  processingLogo = loadImage("processingLogo.png");
 
   finePrint = loadFont("Calibri-12.vlw");
-  
+
   screen = 0;
-  
+
   run = false;
 
   // Button(String word, int xpos, int ypos, int widt, int heigh, int roundCorner, int stroke, int strokeWeight, int fillNotHover, int fillHover, int textFill)
@@ -108,7 +109,7 @@ void playScreen() {
   buttons[0].display();
   buttons[0].hover();
   image(backArrow, 20, 20, 30, 30);
-  
+
   checkerboard.display();
 }
 
@@ -130,10 +131,14 @@ void creditScreen() {
   background(255);
   buttons[0].display();
   buttons[0].hover();
-  image(backArrow, 20, 20, 30, 30);
   otherButtons[0].display();
   otherButtons[0].hover();
+  image(backArrow, 20, 20, 30, 30);
   image(githubLogo, 420, 345, 50, 50);
+  image(processingLogo, 80, 115, 85, 85);
+  image(chessIcon, 420, 105, 103, 103);
+
+
 
   fill(0);
   text("Credits", width/2, 25);
