@@ -11,7 +11,7 @@ Start date: 4/26/2021
 
 ## Running/downloading the project
 
-Simply download the source code and run (Processing needs to be installed) or download the file for your operating system.
+Simply download the source code and run (Processing needs to be installed) or download the standalone file for your operating system.
 
 | Source code | Windows x32 | Windows x64 | macOS | Linux |
 |:-----------:|:-----------:|:-----------:|:-----:|:-----:|
