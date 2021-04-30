@@ -17,15 +17,13 @@ Simply download the source code and run (Processing needs to be installed) or do
 |:-----------:|:-----------:|:-----------:|:-----:|:-----:|
 | [Download](https://github.com/9661328/Chess/tree/main/src/Chess) | [Download]() | [Download]() | [Download]() | [Download]()|
 
-[Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing)
+[Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) 
 
 ![Class diagram]()
 
-[GUI mockup](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) not done, turn each screen into image when done
+[GUI mockup](https://drive.google.com/file/d/1H8nWMMpqz0LseFF-_cuypOIVfTHe6B8P/view?usp=sharing) ([.drawio](https://app.diagrams.net/) file in Google Drive)
 
 ![Home screen mockup](https://github.com/9661328/Chess/blob/main/assets/homeScreenMockup.png?raw=true)
+![Start screen mockup](https://github.com/9661328/Chess/blob/main/assets/startScreenMockup.png?raw=true)
 ![Credit screen mockup](https://github.com/9661328/Chess/blob/main/assets/creditScreenMockup.png?raw=true)
-
-![Play screen mockup]()
-
 ![Setting screen mockup]()
