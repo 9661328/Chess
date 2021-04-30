@@ -21,7 +21,7 @@ Simply download the source code and run (Processing needs to be installed) or do
 
 ![Class diagram]()
 
-[GUI mockup](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) not done, turn each screen into image when done
+[GUI mockup](https://drive.google.com/file/d/1H8nWMMpqz0LseFF-_cuypOIVfTHe6B8P/view?usp=sharing)
 
 ![Home screen mockup](https://github.com/9661328/Chess/blob/main/assets/homeScreenMockup.png?raw=true)
 ![Start screen mockup](https://github.com/9661328/Chess/blob/main/assets/startScreenMockup.png?raw=true)
