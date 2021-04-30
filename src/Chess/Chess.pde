@@ -2,7 +2,7 @@
 
 import processing.sound.*;
 
-PImage chessIcon, backArrow, githubLogo, processingLogo;
+PImage chessIcon, backArrow, githubLogo, processingLogo, settingGears;
 PFont finePrint;
 int screen;
 boolean run;
@@ -19,6 +19,7 @@ void setup() {
   backArrow = loadImage("backArrow.png");
   githubLogo = loadImage("githubLogo.png");
   processingLogo = loadImage("processingLogo.png");
+  settingGears = loadImage("settingGears.png");
 
   finePrint = loadFont("Calibri-12.vlw");
 
@@ -121,8 +122,13 @@ void settingScreen() {
   background(255);
   buttons[0].display();
   buttons[0].hover();
-  image(backArrow, 20, 20, 30, 30);
 
+  imageMode(CENTER);
+  image(backArrow, 20, 20, 30, 30);
+  image(settingGears, 340, 30, 50, 50);
+
+  fill(0);
+  //textFont();
   textAlign(CENTER, CENTER);
   text("Settings", width/2, 25);
 }
@@ -133,20 +139,24 @@ void creditScreen() {
   buttons[0].hover();
   otherButtons[0].display();
   otherButtons[0].hover();
+
+  imageMode(CENTER);
   image(backArrow, 20, 20, 30, 30);
-  image(githubLogo, 420, 345, 50, 50);
   image(processingLogo, 80, 115, 85, 85);
   image(chessIcon, 420, 105, 103, 103);
-
-
+  image(githubLogo, 420, 345, 50, 50);
 
   fill(0);
+  //textFont();
+  textAlign(CENTER, CENTER);
   text("Credits", width/2, 25);
   text("Developer: Jonathan Su", width/2, 80);
   text("Written in: Processing", width/2, 120);
   text("Description: ", width/2, 160);
 
+  fill(100);
   textFont(finePrint);
+  textAlign(CENTER, CENTER);
   text("All rights reserved. No part of this publication may be reproduced,", width/2, 405);
   text("distributed, or transmitted in any form or by any means, including", width/2, 420);
   text("photocopying, recording, or other electronic or mechanical methods,", width/2, 435);
