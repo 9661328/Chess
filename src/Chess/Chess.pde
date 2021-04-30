@@ -9,6 +9,7 @@ boolean run;
 
 Button[] buttons = new Button[5];
 Button[] otherButtons = new Button[1];
+Checkerboard checkerboard = new Checkerboard(0);
 SoundFile click;
 
 void setup() {
@@ -49,9 +50,6 @@ void draw() {
   case 4:
     creditScreen();
     break;
-  case 5:
-
-    break;
   }
 }
 
@@ -70,12 +68,10 @@ void mouseClicked() {
     click.play();
     screen = 4;
   } 
-
-  //else if (otherButtons[0].hover) {
-  //  click.play();
-  //  print("true");
-  //  link("https://github.com/9661328/chess");
-  //}
+  if (otherButtons[0].hover) {
+    click.play();
+    link("https://github.com/9661328/chess");
+  }
 }
 
 void keyPressed() {
@@ -112,6 +108,8 @@ void playScreen() {
   buttons[0].display();
   buttons[0].hover();
   image(backArrow, 20, 20, 30, 30);
+  
+  checkerboard.display();
 }
 
 //void endScreen() {
@@ -140,7 +138,8 @@ void creditScreen() {
   fill(0);
   text("Credits", width/2, 25);
   text("Developer: Jonathan Su", width/2, 80);
-  text("Written in Processing for Computer Programming 1", width/2, 120);
+  text("Written in: Processing", width/2, 120);
+  text("Description: ", width/2, 160);
 
   textFont(finePrint);
   text("All rights reserved. No part of this publication may be reproduced,", width/2, 405);
