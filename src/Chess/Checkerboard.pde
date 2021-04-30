@@ -14,7 +14,6 @@ class Checkerboard {
   }
 
   void display() {
-
     for (int a = rows; a > 0; a--) {
       ypos = (height - 5) - (squareSize * a);
       for (int b = columns; b > 0; b--) {
