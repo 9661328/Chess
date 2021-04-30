@@ -25,5 +25,5 @@ Simply download the source code and run (Processing needs to be installed) or do
 
 ![Home screen mockup](https://github.com/9661328/Chess/blob/main/assets/homeScreenMockup.png?raw=true)
 ![Start screen mockup](https://github.com/9661328/Chess/blob/main/assets/startScreenMockup.png?raw=true)
+![Setting screen mockup](https://github.com/9661328/Chess/blob/main/assets/settingScreenMockup.png?raw=true)
 ![Credit screen mockup](https://github.com/9661328/Chess/blob/main/assets/creditScreenMockup.png?raw=true)
-![Setting screen mockup]()
