@@ -1,11 +1,11 @@
 class Button {
-  PFont font;
+  PFont buttonFont;
   boolean hover;
   String word;
   int xpos, ypos, widt, heigh, roundCorner, stroke, strokeWeight, fillNotHover, fillHover, textFill;
 
   Button(String word, int xpos, int ypos, int widt, int heigh, int roundCorner, int stroke, int strokeWeight, int fillNotHover, int fillHover, int textFill) {
-    font = loadFont("Rockwell-Bold-15.vlw");
+    buttonFont = null;
     hover = false;
     this.word = word;
     this.xpos = xpos;
@@ -31,8 +31,9 @@ class Button {
       fill(fillNotHover);
     }
     rect(xpos, ypos, widt, heigh, roundCorner);
+    buttonFont = loadFont("Rockwell-Bold-15.vlw");
+    textFont(buttonFont);
     fill(textFill);
-    textFont(font);
     text(word, xpos, ypos);
   }
 
