@@ -15,7 +15,7 @@ Simply download the source code and run (Processing needs to be installed) or do
 
 | Source code | Windows x32 | Windows x64 | macOS | Linux |
 |:-----------:|:-----------:|:-----------:|:-----:|:-----:|
-| [Link](https://github.com/9661328/Chess/tree/main/src/Chess) | [Link]() | [Link]() | [Link]() | [Link]()|
+| [Download](https://github.com/9661328/Chess/tree/main/src/Chess) | [Download]() | [Download]() | [Download]() | [Download]()|
 
 [Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) 
 
