@@ -4,12 +4,13 @@ import processing.sound.*;
 
 PImage chessIcon, backArrow, githubLogo, processingLogo, settingGears, playBackground, soundIcon;
 PFont creditFinePrint;
-int screen;
+int screen, elapsedTime, minutes, seconds;
 boolean run;
 
 Button[] buttons = new Button[5];
 Button[] otherButtons = new Button[2];
-Cell[][] cell = new Cell[8][8];
+Checkerboard checkerboard = new Checkerboard(50, 200);
+Cell[][] cell = new Cell[9][9];
 
 SoundFile click, back, horse, githubClick, backgroundMusic;
 
@@ -28,6 +29,7 @@ void setup() {
 
   screen = 0;
 
+
   run = false;
 
   // Button(String word, int xpos, int ypos, int widt, int heigh, int roundCorner, int stroke, int strokeWeight, int fillNotHover, int fillHover, int textFill)
@@ -38,7 +40,7 @@ void setup() {
   buttons[3] = new Button("Settings (E)", width/2, 390, 400, 60, 10, 150, 2, #FFCCCC, 200, 0);
   buttons[4] = new Button("Credits (C)", width/2, 450, 400, 60, 10, 150, 2, #CCE5FF, 200, 0);
   otherButtons[0] = new Button("GitHub Repository:\nhttps://github.com/9661328/chess", width/2, 345, 400, 60, 10, 150, 2, #D5E8D4, 200, #3399FF);
-  otherButtons[1] = new Button("", 20, 60, 30, 30, 10, 100, 2, #F0A2A2, 255, 0);
+  otherButtons[1] = new Button("", 60, 20, 30, 30, 10, 100, 2, #F0A2A2, 255, 0);
 
 
 
@@ -67,6 +69,7 @@ void draw() {
     creditScreen();
     break;
   }
+  println(mouseX + " " + mouseY);
 }
 
 void mouseClicked() {
@@ -78,9 +81,13 @@ void mouseClicked() {
     if (backgroundMusic.isPlaying()) {
       backgroundMusic.stop();
     }
+    if (run) {
+      run = false;
+    }
   } else if (buttons[1].hover) {
     screen = 1;
     click.play();
+    run = true;
     if (otherButtons[1].fillNotHover != #FF0808) {
       backgroundMusic.play();
       backgroundMusic.loop();
@@ -153,28 +160,50 @@ void playScreen() {
   otherButtons[1].display();
   otherButtons[1].hover();
   image(backArrow, 20, 20, 30, 30);
-  image(soundIcon, 20, 60, 25, 25);
+  image(soundIcon, 60, 20, 25, 25);
 
-  for (int x = 0; x < 8; x++) {
-    for (int y = 0; y < 8; y++) {
-      cell[x][y] = new Cell("", 0, 0, #F06311);
-      cell[x][y].display();
+  elapsedTime = millis();
+  seconds = (elapsedTime / 1000) % 60;
+  minutes = (elapsedTime / 1000) / 60;
+  if (seconds < 10) {
+    text(minutes + ":0" + seconds, width/2, 20);
+  } else {
+    text(minutes + ":" + seconds, width/2, 20);
+  }
+
+  for (int row = 1; row < 9; row++) {
+    for (int column = 1; column < 9; column++) {
+      cell[row][column] = new Cell(" ", column * checkerboard.squareSize, row * checkerboard.squareSize + 20);
     }
   }
-  cell[0][0].setPieceVal("blackRook");
-  cell[0][1].setPieceVal("blackKnight");
-  cell[0][2].setPieceVal("blackBishop");
-  cell[0][3].setPieceVal("blackKing");
-  cell[0][4].setPieceVal("blackQueen");
-  cell[0][5].setPieceVal("blackBishop");
-  cell[0][6].setPieceVal("blackKnight");
-  cell[0][7].setPieceVal("blackRook");
-  for (int i = 0; i < 8; i++) {
-    cell[1][i].setPieceVal("blackPawn");
+
+  cell[1][1].setPieceVal("blackRook");
+  cell[1][2].setPieceVal("blackKnight");
+  cell[1][3].setPieceVal("blackBishop");
+  cell[1][4].setPieceVal("blackKing");
+  cell[1][5].setPieceVal("blackQueen");
+  cell[1][6].setPieceVal("blackBishop");
+  cell[1][7].setPieceVal("blackKnight");
+  cell[1][8].setPieceVal("blackRook");
+  for (int i = 1; i < 9; i++) {
+    cell[2][i].setPieceVal("blackPawn");
   }
-  for (int x = 0; x < 8; x++) {
-    for (int y = 0; y < 8; y++) {
-      cell[x][y].display();
+  cell[8][1].setPieceVal("whiteRook");
+  cell[8][2].setPieceVal("whiteKnight");
+  cell[8][3].setPieceVal("whiteBishop");
+  cell[8][4].setPieceVal("whiteKing");
+  cell[8][5].setPieceVal("whiteQueen");
+  cell[8][6].setPieceVal("whiteBishop");
+  cell[8][7].setPieceVal("whiteKnight");
+  cell[8][8].setPieceVal("whiteRook");
+  for (int i = 1; i < 9; i++) {
+    cell[7][i].setPieceVal("whitePawn");
+  }
+
+  checkerboard.display();
+  for (int row = 1; row < 9; row++) {
+    for (int column = 1; column < 9; column++) {
+      cell[row][column].placePiece();
     }
   }
 }
