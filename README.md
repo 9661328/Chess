@@ -9,7 +9,7 @@ Start date: 4/26/2021
 ## Contributers: Jonathan Su
 + Jonathan Su (jonasu9661328@gmail.com): Create GUI mockup of the various screens, create the class diagram, 
 
-## Running/downloading the project
+## Running/Downloading the Project
 
 Simply download the source code and run (Processing needs to be installed) or download the standalone file for your operating system.
 
@@ -17,6 +17,7 @@ Simply download the source code and run (Processing needs to be installed) or do
 |:-----------:|:-----------:|:-----------:|:-----:|:-----:|
 | [Download](https://github.com/9661328/Chess/tree/main/src/Chess) | [Download]() | [Download]() | [Download]() | [Download]()|
 
+## UML Class Diagram + GUI Mockup
 [Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) 
 
 ![Class diagram]()
