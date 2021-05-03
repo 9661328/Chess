@@ -20,7 +20,7 @@ Simply download the source code and run (Processing needs to be installed) or do
 ## UML Class Diagram + GUI Mockup
 [Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) 
 
-![Class diagram]()
+![Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing)
 
 [GUI mockup](https://drive.google.com/file/d/1H8nWMMpqz0LseFF-_cuypOIVfTHe6B8P/view?usp=sharing) ([.drawio](https://app.diagrams.net/) file in Google Drive)
 
