@@ -20,7 +20,7 @@ Simply download the source code and run (Processing needs to be installed) or do
 ## UML Class Diagram + GUI Mockup
 [Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing) 
 
-![Class diagram](https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing)
+![Class diagram](https://raw.githubusercontent.com/9661328/Chess/af88393dca70df881e606954ec4c5f02b4e48fe9/assets/Chess%20Class%20Diagram%20(UML).svg)
 
 [GUI mockup](https://drive.google.com/file/d/1H8nWMMpqz0LseFF-_cuypOIVfTHe6B8P/view?usp=sharing) ([.drawio](https://app.diagrams.net/) file in Google Drive)
 
