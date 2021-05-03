@@ -4,9 +4,9 @@ import processing.sound.*;
 
 PImage chessIcon, backArrow, githubLogo, processingLogo, settingGears, playBackground, soundIcon;
 PFont creditFinePrint;
-int screen, elapsedTime, minutes, seconds;
+int screen, backgroundMusic, background, elapsedTime, minutes, seconds;
 boolean run;
-SoundFile click, back, horse, githubClick, backgroundMusic1, backgroundMusic2, backgroundMusic3;
+SoundFile click, back, horse, githubClick, backgroundMusic1, backgroundMusic2, backgroundMusic3, backgroundMusic4;
 
 Button[] buttons = new Button[5];
 Button[] otherButtons = new Button[2];
@@ -29,6 +29,8 @@ void setup() {
   creditFinePrint = loadFont("Calibri-12.vlw");
 
   screen = 0;
+  backgroundMusic = 3;
+  // background = ;
 
   run = false;
 
@@ -52,6 +54,7 @@ void setup() {
   backgroundMusic1 = new SoundFile(this, "Silent Partner.wav");
   backgroundMusic2 = new SoundFile(this, "Solve The Puzzle.wav");
   backgroundMusic3 = new SoundFile(this, "Adventures – A Himitsu.wav");
+  backgroundMusic4 = new SoundFile(this, "DJANGO UNCHAINED - Nicaragua.wav");
 }
 
 
@@ -75,6 +78,9 @@ void draw() {
 }
 
 void mouseClicked() {
+  if (screen == 0 && mouseX < width/2 + 86 && mouseX > width/2 - 86 && mouseY < 110 + 86 && mouseY > 110 - 86) {
+    horse.play();
+  }
   if (buttons[0].hover) {
     if (screen != 0) {
       back.play();
@@ -82,6 +88,10 @@ void mouseClicked() {
     screen = 0;
     if (backgroundMusic1.isPlaying()) {
       backgroundMusic1.stop();
+    } else if (backgroundMusic2.isPlaying()) {
+      backgroundMusic2.stop();
+    } else if (backgroundMusic3.isPlaying()) {
+      backgroundMusic3.stop();
     }
     if (run) {
       run = false;
@@ -91,8 +101,19 @@ void mouseClicked() {
     click.play();
     run = true;
     if (otherButtons[1].fillNotHover != #FF0808) {
-      backgroundMusic2.play();
-      backgroundMusic2.loop();
+      if (backgroundMusic == 1) {
+        backgroundMusic1.play();
+        backgroundMusic1.loop();
+      } else if (backgroundMusic == 2) {
+        backgroundMusic2.play();
+        backgroundMusic2.loop();
+      } else if (backgroundMusic == 3) {
+        backgroundMusic3.play();
+        backgroundMusic3.loop();
+      } else if (backgroundMusic == 4) {
+        backgroundMusic4.play();
+        backgroundMusic4.loop();
+      }
     }
     buttons[1].hover = false;
   } else if (buttons[2].hover) {
@@ -110,17 +131,33 @@ void mouseClicked() {
     githubClick.play();
     link("https://github.com/9661328/chess");
   } else if (otherButtons[1].hover) {
-    if (backgroundMusic1.isPlaying()) {
-      backgroundMusic1.stop();
+    if (backgroundMusic1.isPlaying() || backgroundMusic2.isPlaying() || backgroundMusic3.isPlaying() || backgroundMusic4.isPlaying()) {
+      if (backgroundMusic == 1) {
+        backgroundMusic1.stop();
+      } else if (backgroundMusic == 2) {
+        backgroundMusic2.stop();
+      } else if (backgroundMusic == 3) {
+        backgroundMusic3.stop();
+      } else if (backgroundMusic == 4) {
+        backgroundMusic4.stop();
+      }
       otherButtons[1].fillNotHover = #FF0808;
-    } else if (!backgroundMusic1.isPlaying()) {
-      backgroundMusic1.play();
-      backgroundMusic1.loop();
+    } else if (!backgroundMusic1.isPlaying() && !backgroundMusic2.isPlaying() && !backgroundMusic3.isPlaying() && !backgroundMusic4.isPlaying()) {
+      if (backgroundMusic == 1) {
+        backgroundMusic1.play();
+        backgroundMusic1.loop();
+      } else if (backgroundMusic == 2) {
+        backgroundMusic2.play();
+        backgroundMusic2.loop();
+      } else if (backgroundMusic == 3) {
+        backgroundMusic3.play();
+        backgroundMusic3.loop();
+      } else if (backgroundMusic == 4) {
+        backgroundMusic4.play();
+        backgroundMusic4.loop();
+      }
       otherButtons[1].fillNotHover = #F0A2A2;
     }
-  }
-  if (screen == 0 && mouseX < width/2 + 86 && mouseX > width/2 - 86 && mouseY < 110 + 86 && mouseY > 110 - 86) {
-    horse.play();
   }
 }
 
