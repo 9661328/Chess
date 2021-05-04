@@ -29,3 +29,6 @@ Simply download the source code and run (Processing needs to be installed) or do
 ![Start screen mockup](https://github.com/9661328/Chess/blob/main/assets/startScreenMockup.png?raw=true)
 ![Setting screen mockup](https://github.com/9661328/Chess/blob/main/assets/settingScreenMockup.png?raw=true)
 ![Credit screen mockup](https://github.com/9661328/Chess/blob/main/assets/creditScreenMockup.png?raw=true)
+
+
+<a href="https://drive.google.com/file/d/1hZU3DKWO7xImn2FjExnfXkTQaEVxK66c/view?usp=sharing" target="_blank">Class Diagram</a>
