@@ -19,9 +19,9 @@ class Checkerboard {
       for (int b = 0; b < COLUMNS; b++) {
         xpos = pixelFromLeft + (squareSize * b);
         if ((a+b) % 2 == 0) {
-          fill(255);
+          fill(255, 220);
         } else {
-          fill(oddSquareColor);
+          fill(oddSquareColor, 220);
         }
         rectMode(CORNER);
         stroke(oddSquareColor);

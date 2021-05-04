@@ -2,18 +2,16 @@
 
 import processing.sound.*;
 
-PImage chessIcon, backArrow, githubLogo, processingLogo, settingGears, playBackground, soundIcon;
+PImage chessIcon, backArrow, githubLogo, processingLogo, settingGears, playBackground1, playBackground2, playBackground3, soundIcon;
 PFont creditFinePrint;
 int screen, backgroundMusic, background, elapsedTime, minutes, seconds;
 boolean run;
-SoundFile click, back, horse, githubClick, backgroundMusic1, backgroundMusic2, backgroundMusic3, backgroundMusic4;
+SoundFile click, back, settings, horse, githubClick, windowsError, backgroundMusic1, backgroundMusic2, backgroundMusic3, backgroundMusic4;
 
 Button[] buttons = new Button[5];
-Button[] otherButtons = new Button[2];
+Button[] otherButtons = new Button[10];
 Cell[][] cell = new Cell[8][8];
 Checkerboard checkerboard = new Checkerboard(200);
-
-
 
 void setup() {
   size(500, 500);
@@ -23,18 +21,18 @@ void setup() {
   githubLogo = loadImage("githubLogo.png");
   processingLogo = loadImage("processingLogo.png");
   settingGears = loadImage("settingGears.png");
-  playBackground = loadImage("playBackground.jpg");
+  playBackground1 = loadImage("playBackground.jpg");
+  playBackground2 = loadImage("background2.jpg");
+  playBackground3 = loadImage("background3.png");
   soundIcon = loadImage("soundIcon.png");
 
   creditFinePrint = loadFont("Calibri-12.vlw");
 
   screen = 0;
   backgroundMusic = 3;
-  // background = ;
+  background = 2;
 
   run = false;
-
-  // Button(String word, int xpos, int ypos, int widt, int heigh, int roundCorner, int stroke, int strokeWeight, int fillNotHover, int fillHover, int textFill)
 
   buttons[0] = new Button("", 20, 20, 30, 30, 10, #F0A2A2, 2, #F0A2A2, 255, 0); // back button
   buttons[1] = new Button("Start (S)", width/2, 270, 400, 60, 10, 150, 2, #CDEB8B, 200, 0);
@@ -42,15 +40,22 @@ void setup() {
   buttons[3] = new Button("Settings (E)", width/2, 390, 400, 60, 10, 150, 2, #FFCCCC, 200, 0);
   buttons[4] = new Button("Credits (C)", width/2, 450, 400, 60, 10, 150, 2, #CCE5FF, 200, 0);
   otherButtons[0] = new Button("GitHub Repository:\nhttps://github.com/9661328/chess", width/2, 345, 400, 60, 10, 150, 2, #D5E8D4, 200, #3399FF);
-  otherButtons[1] = new Button("", 60, 20, 30, 30, 10, 100, 2, #F0A2A2, 255, 0); // sound button
-
-
-
+  otherButtons[1] = new Button("", 60, 20, 30, 30, 10, 100, 2, #F0A2A2, 255, 0); // sound button (play)
+  otherButtons[2] = new Button("1", 60, 20, 30, 30, 100, 100, 2, 100, 255, 0); // background music 1 (settings)
+  otherButtons[3] = new Button("2", 100, 20, 30, 30, 100, 100, 2, 100, 255, 0); // background music 2 (settings)
+  otherButtons[4] = new Button("3", 140, 20, 30, 30, 100, 100, 2, 100, 255, 0); // background music 3 (settings)
+  otherButtons[5] = new Button("4", 180, 20, 30, 30, 100, 100, 2, 100, 255, 0); // background music 4 (settings)
+  otherButtons[6] = new Button("1", 60, 60, 30, 30, 100, 100, 2, 100, 255, 0); // background 1 (settings)
+  otherButtons[7] = new Button("2", 100, 60, 30, 30, 100, 100, 2, 100, 255, 0); // background 2 (settings)
+  otherButtons[8] = new Button("3", 140, 60, 30, 30, 100, 100, 2, 100, 255, 0); // background 3 (settings)
+  otherButtons[9] = new Button("4", 180, 60, 30, 30, 100, 100, 2, 100, 255, 0); // background 4 (settings)
 
   click = new SoundFile(this, "click.wav");
   back = new SoundFile(this, "back.wav");
+  settings = new SoundFile(this, "settings.wav");
   horse = new SoundFile(this, "horse.wav");
   githubClick = new SoundFile(this, "githubClick.wav");
+  windowsError = new SoundFile(this, "Windows XP Error.mp3");
   backgroundMusic1 = new SoundFile(this, "Silent Partner.wav");
   backgroundMusic2 = new SoundFile(this, "Solve The Puzzle.wav");
   backgroundMusic3 = new SoundFile(this, "Adventures – A Himitsu.wav");
@@ -60,7 +65,10 @@ void setup() {
 
 
 void draw() {
-  println(mouseX + " " + mouseY);
+  if (!run) {
+    windowsError.play();
+    run = true;
+  }
   switch(screen) {
   case 0:
     startScreen();
@@ -92,9 +100,8 @@ void mouseClicked() {
       backgroundMusic2.stop();
     } else if (backgroundMusic3.isPlaying()) {
       backgroundMusic3.stop();
-    }
-    if (run) {
-      run = false;
+    } else if (backgroundMusic4.isPlaying()) {
+      backgroundMusic4.stop();
     }
   } else if (buttons[1].hover) {
     screen = 1;
@@ -158,6 +165,55 @@ void mouseClicked() {
       }
       otherButtons[1].fillNotHover = #F0A2A2;
     }
+  } else if (otherButtons[2].hover || otherButtons[3].hover || otherButtons[4].hover || otherButtons[5].hover) {
+    if (backgroundMusic1.isPlaying() || backgroundMusic2.isPlaying() || backgroundMusic3.isPlaying() || backgroundMusic4.isPlaying()) {
+      if (backgroundMusic == 1) {
+        backgroundMusic1.stop();
+      } else if (backgroundMusic == 2) {
+        backgroundMusic2.stop();
+      } else if (backgroundMusic == 3) {
+        backgroundMusic3.stop();
+      } else if (backgroundMusic == 4) {
+        backgroundMusic4.stop();
+      }
+    }
+    settings.play();
+    delay(500);
+    if (otherButtons[2].hover) {
+      backgroundMusic = 1;
+      backgroundMusic1.play();
+    } else if (otherButtons[3].hover) {
+      backgroundMusic = 2;
+      backgroundMusic2.play();
+    } else if (otherButtons[4].hover) {
+      backgroundMusic = 3;
+      backgroundMusic3.play();
+    } else if (otherButtons[5].hover) {
+      backgroundMusic = 4;
+      backgroundMusic4.play();
+    }
+  } else if (otherButtons[6].hover || otherButtons[7].hover || otherButtons[8].hover || otherButtons[9].hover) {
+    if (backgroundMusic1.isPlaying() || backgroundMusic2.isPlaying() || backgroundMusic3.isPlaying() || backgroundMusic4.isPlaying()) {
+      if (backgroundMusic == 1) {
+        backgroundMusic1.stop();
+      } else if (backgroundMusic == 2) {
+        backgroundMusic2.stop();
+      } else if (backgroundMusic == 3) {
+        backgroundMusic3.stop();
+      } else if (backgroundMusic == 4) {
+        backgroundMusic4.stop();
+      }
+    }
+    settings.play();
+    if (otherButtons[6].hover) {
+      background = 1;
+    } else if (otherButtons[7].hover) {
+      background = 2;
+    } else if (otherButtons[8].hover) {
+      background = 3;
+    } else if (otherButtons[9].hover) {
+      background = 4;
+    }
   }
 }
 
@@ -193,7 +249,13 @@ void startScreen() {
 void playScreen() {
   background(255);
   imageMode(CENTER);
-  image(playBackground, width/2, height/2, 1110, 510);
+  if (background == 1) {
+    image(playBackground1, width/2, height/2, 1065, 500);
+  } else if (background == 2) {
+    image(playBackground2, width/2, height/2, 1000, 500);
+  } else if (background == 3) {
+    image(playBackground3, width/2, height/2, 888, 500);
+  }
   buttons[0].display();
   buttons[0].hover();
   otherButtons[1].display();
@@ -215,7 +277,6 @@ void playScreen() {
       cell[row][column] = new Cell("", (checkerboard.pixelFromLeft + (column * checkerboard.squareSize)), (checkerboard.pixelFromTop + (row * checkerboard.squareSize)));
     }
   }
-
   cell[0][0].setPieceVal("blackRook");
   cell[0][1].setPieceVal("blackKnight");
   cell[0][2].setPieceVal("blackBishop");
@@ -238,7 +299,6 @@ void playScreen() {
   for (int i = 0; i < 8; i++) {
     cell[6][i].setPieceVal("whitePawn");
   }
-
   checkerboard.display();
   for (int row = 0; row < 8; row++) {
     for (int column = 0; column < 8; column++) {
@@ -256,6 +316,11 @@ void settingScreen() {
   background(255);
   buttons[0].display();
   buttons[0].hover();
+  for (int i = 2; i <= 9; i++) {
+    otherButtons[i].display();
+    otherButtons[i].hover();
+  }
+
 
   imageMode(CENTER);
   image(backArrow, 20, 20, 30, 30);
