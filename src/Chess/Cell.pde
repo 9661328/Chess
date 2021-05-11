@@ -5,12 +5,13 @@ class Cell {
   color hoverColor, highlightColor, highlightStroke;
   int xpos, ypos, squareSize;
 
-  Cell(String pieceValue, int xpos, int ypos) {
-    this.pieceValue = pieceValue;
+  Cell(int xpos, int ypos) {
+    pieceImage = null;
+    pieceValue = "";
     hover = false;
     hoverColor = color(0, 255, 0, 100);
     highlightColor = color(255, 100);
-    highlightStroke = 255;
+    highlightStroke = color(0, 255, 255);
     this.xpos = xpos;
     this.ypos = ypos;
     squareSize = checkerboard.squareSize;
@@ -32,15 +33,11 @@ class Cell {
     if (mouseX < xpos + squareSize && mouseX > xpos && mouseY < ypos + squareSize && mouseY > ypos) {
       fill(hoverColor);
       rect(xpos, ypos, squareSize, squareSize);
+      println("Hover: " + xpos + ", " + ypos);
     }
   }
 
-  void highlightCell() {
-    if (hover) {
-      fill(highlightColor);
-      stroke(highlightStroke);
-      strokeWeight(2);
-      rect(xpos, ypos, squareSize, squareSize);
-    }
-  }
+  //boolean cellIsOccupied() {
+    
+  //}
 }

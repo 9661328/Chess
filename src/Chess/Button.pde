@@ -24,11 +24,12 @@ class Button {
     rectMode(CENTER);
     textAlign(CENTER, CENTER);
     stroke(stroke);
-    strokeWeight(strokeWeight);
     if (hover) {
       fill(fillHover);
+      strokeWeight(strokeWeight + 1);
     } else {
       fill(fillNotHover);
+      strokeWeight(strokeWeight);
     }
     rect(xpos, ypos, widt, heigh, roundCorner);
     buttonFont = loadFont("Rockwell-Bold-15.vlw");

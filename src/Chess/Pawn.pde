@@ -1,7 +1,6 @@
 class Pawn {
-    
-  Pawn() {
+
+  Pawn() {}
   
-  }
-  
+
 }
