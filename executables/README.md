@@ -1,2 +1,2 @@
 # Chess / executables /
-This is where the zipped standalone files for the various operating systems live.
+This is where the zipped standalone files for macOS, Windows, and Linux live.
