@@ -7,7 +7,7 @@ Written in [Processing](https://processing.org/), a programming language based o
 Start date: 4/26/2021
 
 ## Contributers: Jonathan Su
-+ Jonathan Su (jonasu9661328@gmail.com): Create GUI mockup of the various screens, create the class diagram, 
++ Jonathan Su (jonasu9661328@gmail.com): Create GUI mockup of the various screens, create the class diagram, design the user interface, and write the logic for the pieces, and testing.
 
 ## Running/Downloading the Project
 
@@ -31,3 +31,5 @@ Simply download the source code and run (Processing needs to be installed) or do
 ![Credit screen mockup](https://github.com/9661328/Chess/blob/main/assets/creditScreenMockup.png?raw=true)
 
 ## Features
++ Settings screen to change things such as background music, color, and background.
++ Pieces have been placed, but don't have any logic to move yet.
