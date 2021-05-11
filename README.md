@@ -33,3 +33,6 @@ Simply download the source code and run (Processing needs to be installed) or do
 ## Features
 + Settings screen to change things such as background music, color, and background.
 + Pieces have been placed, but don't have any logic to move yet.
+
+# Other things
++ https://en.wikipedia.org/wiki/Rules_of_chess
