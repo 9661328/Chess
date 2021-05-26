@@ -17,8 +17,8 @@ class Checkerboard {
 
   void display() {
     for (int a = 0; a < ROWS; a++) {
-      ypos = pixelFromTop + (squareSize * a);
       for (int b = 0; b < COLUMNS; b++) {
+        ypos = pixelFromTop + (squareSize * a);
         xpos = pixelFromLeft + (squareSize * b);
         if ((a+b) % 2 == 0) {
           fill(255, 220);
@@ -30,13 +30,14 @@ class Checkerboard {
         strokeWeight(2);
         rect(xpos, ypos, squareSize, squareSize);
 
+// fixing
         if (playerTurn == 1) {
           fill(255);
         } else if (playerTurn == 2) {
           fill(0);
         }
         rect(460, 10, 30, 30);
-        
+
         fill(0);
         text(a + 1, pixelFromLeft - 10, ypos + (squareSize/2));
         text(char(b + 65), xpos + (squareSize/2), pixelFromTop - 10);

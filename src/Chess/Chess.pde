@@ -9,11 +9,11 @@ boolean run, squareSelected;
 SoundFile click, back, settings, horse, githubClick, windowsError, backgroundMusic1, backgroundMusic2, backgroundMusic3, backgroundMusic4;
 
 Button[] buttons = new Button[5];
-Button[] otherButtons = new Button[10];
+Button[] otherButtons = new Button[18];
 Cell[][] cell = new Cell[8][8];
 Checkerboard checkerboard = new Checkerboard(200);
 
-Pawn pawn = new Pawn();
+
 
 void setup() {
   size(500, 500);
@@ -35,14 +35,22 @@ void setup() {
   buttons[4] = new Button("Credits (C)", width/2, 450, 400, 60, 10, 150, 2, #CCE5FF, 200, 0);
   otherButtons[0] = new Button("GitHub Repository:\nhttps://github.com/9661328/chess", width/2, 345, 400, 60, 10, 150, 2, #D5E8D4, 200, #3399FF); // Github repository (credits)
   otherButtons[1] = new Button("", 60, 20, 30, 30, 10, 100, 2, #F0A2A2, 255, 0); // sound button (play)
-  otherButtons[2] = new Button("1", 120, 130, 40, 40, 100, 100, 2, 100, 255, 0); // background music 1 (settings)
-  otherButtons[3] = new Button("2", 220, 130, 40, 40, 100, 100, 2, 100, 255, 0); // background music 2 (settings)
-  otherButtons[4] = new Button("3", 300, 130, 40, 40, 100, 100, 2, 100, 255, 0); // background music 3 (settings)
-  otherButtons[5] = new Button("4", 390, 130, 40, 40, 100, 100, 2, 100, 255, 0); // background music 4 (settings)
-  otherButtons[6] = new Button("1", 60, 60, 30, 30, 100, 100, 2, 100, 255, 0); // background 1 (settings)
-  otherButtons[7] = new Button("2", 100, 60, 30, 30, 100, 100, 2, 100, 255, 0); // background 2 (settings)
-  otherButtons[8] = new Button("3", 140, 60, 30, 30, 100, 100, 2, 100, 255, 0); // background 3 (settings)
-  otherButtons[9] = new Button("4", 180, 60, 30, 30, 100, 100, 2, 100, 255, 0); // background 4 (settings)
+  otherButtons[2] = new Button("1", 100, 150, 40, 40, 100, 100, 2, 100, 255, 0); // background music 1 (settings)
+  otherButtons[3] = new Button("2", 200, 150, 40, 40, 100, 100, 2, 100, 255, 0); // background music 2 (settings)
+  otherButtons[4] = new Button("3", 300, 150, 40, 40, 100, 100, 2, 100, 255, 0); // background music 3 (settings)
+  otherButtons[5] = new Button("4", 400, 150, 40, 40, 100, 100, 2, 100, 255, 0); // background music 4 (settings)
+  otherButtons[6] = new Button("1", 100, 240, 40, 40, 100, 100, 2, 100, 255, 0); // background 1 (settings)
+  otherButtons[7] = new Button("2", 200, 240, 40, 40, 100, 100, 2, 100, 255, 0); // background 2 (settings)
+  otherButtons[8] = new Button("3", 300, 240, 40, 40, 100, 100, 2, 100, 255, 0); // background 3 (settings)
+  otherButtons[9] = new Button("4", 400, 240, 40, 40, 100, 100, 2, 100, 255, 0); // background 4 (settings)
+  otherButtons[10] = new Button("1", 100, 330, 40, 40, 100, 100, 2, 100, 255, 0); //
+  otherButtons[11] = new Button("2", 200, 330, 40, 40, 100, 100, 2, 100, 255, 0); //
+  otherButtons[12] = new Button("3", 300, 330, 40, 40, 100, 100, 2, 100, 255, 0); //
+  otherButtons[13] = new Button("4", 400, 330, 40, 40, 100, 100, 2, 100, 255, 0); //
+  otherButtons[14] = new Button("1", 100, 420, 40, 40, 100, 100, 2, 100, 255, 0); //
+  otherButtons[15] = new Button("2", 200, 420, 40, 40, 100, 100, 2, 100, 255, 0); //
+  otherButtons[16] = new Button("3", 300, 420, 40, 40, 100, 100, 2, 100, 255, 0); //
+  otherButtons[17] = new Button("4", 400, 420, 40, 40, 100, 100, 2, 100, 255, 0); //
 
   click = new SoundFile(this, "click.wav");
   back = new SoundFile(this, "back.wav");
@@ -307,6 +315,11 @@ void playScreen() {
       cell[row][column].hover();
     }
   }
+  
+  
+  
+  
+  
 }
 
 //void endScreen() {
@@ -317,24 +330,29 @@ void settingScreen() {
   background(255);
 
   fill(255);
-  //noStroke();
-  rect(width/2, 110, width, 90);
+  rectMode(CENTER);
+  noStroke();
+  fill(#F8CECC);
+  rect(width/2, 130, width, 90);
+  fill(#DAE8FC);
   rect(width/2, 220, width, 90);
-  rect(width/2, 330, width, 90);
-  rect(width/2, 440, width, 90);
+  fill(#E1D5E7);
+  rect(width/2, 310, width, 90);
+  fill(#FFE6CC);
+  rect(width/2, 400, width, 90);
 
   fill(0);
   textAlign(CENTER, CENTER);
   text("Settings", width/2, 25);
-  text("Background Music", width/2, 90);
-  text("Background Picture", width/2, 180);
-  text("Square Color", width/2, 270);
-  text("Lobby Color", width/2, 360);
+  text("Background Music", width/2, 110);
+  text("Background Picture", width/2, 200);
+  text("Square Color", width/2, 290);
+  text("Lobby Color", width/2, 380);
 
 
   buttons[0].display();
   buttons[0].hover();
-  for (int i = 2; i <= 9; i++) {
+  for (int i = 2; i < otherButtons.length; i++) {
     otherButtons[i].display();
     otherButtons[i].hover();
   }
