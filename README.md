@@ -1,5 +1,7 @@
 # Chess
 
+# **This project is still in development.**
+
 Description: A simple chess game for the final project of Computer Programming 1. Implements a GUI and basic OOP concepts in a language similar to Java.
 
 Written in [Processing](https://processing.org/), a programming language based on Java.
