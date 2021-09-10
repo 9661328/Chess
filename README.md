@@ -1,6 +1,6 @@
 # Chess
 
-# **This project is still in development.**
+# **This project's development has been paused and is not finished yet.**
 
 Description: A simple chess game for the final project of Computer Programming 1. Implements a GUI and basic OOP concepts in a language similar to Java.
 
